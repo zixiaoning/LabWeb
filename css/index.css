@@ -1,0 +1,47 @@
+body,p,input,form,button,pre,textarea,blockquote
+dl,dt,dd,
+ul,li,ol,
+h1,h2,h3,h4,h5,h6,
+{margin: 0; padding: 0; }
+hr{
+    width: 900px;
+    border:1px dotted black;
+    margin-top:0px;
+    padding-top: 0px;
+
+}
+#top{
+    width:100%;
+    height:25px;
+    background-color: #C6BFBF;
+
+}
+#top a{
+    display: inline-block;
+    font-family: inherit;
+    color: black;
+    font-size: 12px;
+    line-height: 25px;
+    float: right;
+    width:180px;
+}
+#top a li{
+    display: inline-block;
+    width: 60px;
+    text-align:center;
+}
+#content{
+    background-color:lightgoldenrodyellow;
+    height:600px;
+    margin:0 auto;
+}
+#nav{
+    height: 60px;
+    margin-left: 300px;
+    width: 800px;
+
+}
+#nav .nav li{
+      display: inline-block;
+     font-size: 30px;
+}
