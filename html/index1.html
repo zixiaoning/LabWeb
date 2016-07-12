@@ -1,10 +1,240 @@
+<!--html5的定义-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>实验室网站</title>
+    <title>Bootstrap 实例 - 标签式的导航菜单</title>
+    <meta charset="utf-8"> <!--标明字符编码-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge"><!--IE中运行最新的渲染模式 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--初始化移动浏览器 viewport使网页开发者控制页面的缩放-->
+    <link href="../../LabWeb/css/index.css" rel="stylesheet">
+    <link href="../../LabWeb/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style >
+        *{padding:0;  margin:0;}
+        body{
+            font-size: 14px;
+            font-family:Aharoni;
+            color: #555;
+            -webkit-font-smoothing:antialiased;
+        }
+        .slider .main,
+        .slider{
+            width:100%;
+            height:400px;
+            position:relative;
+            left:0px;
+        }
+        /*幻灯片 main继承slider的样式*/
+        .slider .main{
+            overflow: hidden;
+        }
+        .slider .main .main-i{
+            position: absolute;
+            right: 0px;
+            top:0px;
+        }
+        .slider .main .main-i img{
+            width:80%;
+            position: absolute;  /*图片漂浮*/
+            left: 0px;top:0px;
+        }
+        .slider .main .main-i .caption{
+        position: absolute;
+        right: 50%;
+        top:30%;
+        z-index: 6;
+        }
+        .slider .main .main-i .caption h2 {
+        font-size: 40px;
+        line-height: 50px;
+        color: #b5b5b5;
+        text-align: right;
+        }
+        .slider .main .main-i .caption h3 {
+            font-size: 70px;
+            line-height: 70px;
+            color: #000000;
+            text-align: right;
+        }
+        /*控制按钮*/
+        .slider .ctrl{
+            width:60%;
+            height:13px;
+            line-height: 13px;
+            text-align: center;
+            position: absolute;
+            left:150px;
+            bottom:-13px;
+            background-color: grey;
+
+        }
+        .slider .ctrl .ctrl-i{
+            display: inline-block;
+            width:150px;
+            height:13px;
+            background-color: #666;
+            box-shadow: 0 1px 1px rgba(0,0,0,.3);
+            position: relative;
+
+        }
+        /*img 跟随父元素的宽度*/
+        .slider .ctrl .ctrl-i img{
+            width:100%;
+            position: absolute;/*让图片漂浮*/
+            left:0;
+            bottom:0px;
+            z-index: 3;
+        }
+        .slider .ctrl .ctrl-i:hover{
+            background-color: #f0f0f0;
+        }
+        .slider .ctrl .ctrl-i:hover img{
+            opacity: 1;
+            width:100%;
+            /*height:13px;*/
+            bottom:13px;
+        }
+        /*active 当前展现的状态 控制按钮为黑色*/
+        .slider .ctrl .ctrl-i_active{
+            background-color: #000;
+        }
+        /*!*当前活动状态的控制图片为不透明*!*/
+        .slider .ctrl .ctrl-i_active:hover img{
+            /*opacity:0;*/
+        }
+
+        .slider .main .main-i{
+        /*opacity:0;*/
+        position: absolute;
+        right:50px;
+        top:0;
+        }
+        .slider .main .main-i_active{
+        right:0;
+        opacity:1;
+        }
+    </style>
 </head>
 <body>
+<div id="top"><a href="#"><li>注册</li>|<li>登录</li></a></div>
+<div id="content">
+    <div class="navbar navbar-default" role="navigation">
+        　<div class="navbar-header">
+        　  <img src="../imgs/logo.png"/>
+        　</div>
+        <ul class="nav navbar-nav">
+            <li ><a href="##">网站首页</a></li>
+            <li class="dropdown">
+                <a href="##" data-toggle="dropdown" class="dropdown-toggle">导师篇<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="##">CSS3</a></li>
+                    <li><a href="##">JavaScript</a></li>
+                    <li class="disabled"><a href="##">PHP</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="##">考研资讯</a></li>
+            <li><a href="##">生活篇</a></li>
+            <li><a href="##">交易篇</a></li>
+            <li><a href="##">关于我们</a></li>
+        </ul>
+        <form action="##" class="navbar-form navbar-left" rol="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="请输入关键词" />
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+    </div>
 
+    <div class="slider">
+        <div class="main"    id="template_main">
+            <div class="main-i    main-i_active" id="mian_{{index}}">
+                <div class="caption">
+                    <h2> {{h2}}</h2>
+                    <h3> {{h3}}</h3>
+                </div>
+                <img src="../imgs/{{index}}.jpg"  />
+            </div>
+
+        </div>
+        <div class="ctrl" id="template_ctrl">
+            <a class="ctrl-i" id="ctrl_{{index}}" href="javascript:switchSlider({{index}});">
+                <img class="imgs" src="../imgs/1.bmp"/></a>
+        </div>
+    </div>
+
+
+
+
+</div>
+<!--js代码-->
+<script type="javascript">
+    /*数据定义 （实际生产环境，信息由后台给出）*/
+    var data=[
+        { img:1,h1:'creative1',h2:'duet1'},
+        { img:2,h1:'creative2',h2:'duet2'},
+        { img:3,h1:'creative3',h2:'duet3'},
+        { img:4,h1:'creative4',h2:'duet4'}
+    ];
+    var g=function (id){
+        if(id.substr(0,1)=="."){
+            return document.getElementsByClassName(id.substr(1));
+        }
+        return document.getElementById(id);
+
+    }
+    //幻灯片的操作，所有幻灯片&对应的按钮
+    function addSlider (){
+        var tpl_main=g('template_main').innerHTML
+                .replace(/^\s*/,'')
+                .replace(/\s*$/,'');
+        var tpl_ctrl=g('template_ctrl').innerHTML
+                .replace(/^\s*/,'')
+                .replace(/\s*$/,'');
+// 定义最终输出的 html的变量
+        var out_main=[];
+        var out_ctrl=[];
+//         遍历所有数据，构建最终输出的html
+        for(var i in  data){
+            var _html_main=tpl_main
+                    .replace(/{{index}}/g,data[i].img)
+                    .replace(/{{h2}}/g,data[i].h2)
+                    .replace(/{{h3}}/g,data[i].h3);
+            var _html_ctrl = tpl_ctrl
+                    .replace(/{{index}}/g,data[i].img);
+            out_main.push(_html_main);
+            out_ctrl.push(_html_ctrl);
+        }
+
+        g('template_main').innerHTML=out_main.join('');
+        g('template_ctrl').innerHTML=out_ctrl.join('');
+
+
+    }
+    //     幻灯片切换
+    function  switchSlider(n){
+        var  main=g('main_'+n);
+        var ctrl=g('ctrl_'+n);
+//         获取所有的幻灯片的样式
+        var clear_main=g('.mian-i');
+        var clear_ctrl=g('.ctrl-i');
+        for( var i=0; i<clear_ctrl.length;i++){
+            clear_main[i].className=clear_main[i].className
+                    .replace('main-i_active','');
+            clear_ctrl[i].className=clear_ctrl[i].className
+                    .replace('ctrl-i_active','');
+        }
+
+//         清楚active样式
+        main.className +='main-i_active';
+        ctrl.className +='ctrl-i_active';
+    }
+    //         定义何时处理幻灯片输出
+    window.onload= function () {
+        addSlider();
+        switchSlider(1);
+    }
+</script>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/jquery.min.js"></script>
 </body>
 </html>
