@@ -1,120 +1,183 @@
-<!--html5的定义-->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 实例 - 标签式的导航菜单</title>
+    <title>考研资讯</title>
     <meta charset="utf-8"> <!--标明字符编码-->
     <meta http-equiv="x-ua-compatible" content="IE=edge"><!--IE中运行最新的渲染模式 -->
     <meta name="viewport" content="width=device-width,initial-scale=1"><!--初始化移动浏览器 viewport使网页开发者控制页面的缩放-->
+    <!--百度静态CDN服务资源-->
     <link href="../css/index.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-       .learn_div{
-           text-align: center;
-           width: 900px;
-           position: relative;
-           left: 300px;
-           top: 20px;
-
-
-       }
-        #ky_zl{
-            width:400px;
-            height:300px;
-            float: left;
-            background-color: #1b6d85;
-        }
-        #yjs_zl{
-            width:400px;
-            height:300px;
-            float: right;
-            background-color: #3c763d;
-        }
-    </style>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div id="top"><a href="#"><li>注册</li>|<li>登录</li></a></div>
-<div id="content">
-    <div class="navbar navbar-default" role="navigation">
-        　<div class="navbar-header">
-          <img src="../imgs/logo.png"/>
-        　</div>
-        <ul class="nav navbar-nav">
-            <li ><a href="##">网站首页</a></li>
-            <li class="dropdown">
-                <a href="##" data-toggle="dropdown" class="dropdown-toggle">导师篇<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="##">CSS3</a></li>
-                    <li><a href="##">JavaScript</a></li>
-                    <li class="disabled"><a href="##">PHP</a></li>
-                </ul>
-            </li>
-            <li class="active"><a href="##">考研资讯</a></li>
-            <li><a href="##">生活篇</a></li>
-            <li><a href="##">交易篇</a></li>
-            <li><a href="##">关于我们</a></li>
-        </ul>
-        <form action="##" class="navbar-form navbar-left" rol="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="请输入关键词" />
+<div id="body">
+    <div id="top"><a href="login.html">登录</a></div>
+    <div id="content">
+        <div class="navbar navbar-default" role="navigation">
+            　
+            <div class="navbar-header">
+                <img src="../imgs/logo.png"/>
+                　
             </div>
-            <button type="submit" class="btn btn-default">搜索</button>
-        </form>
-    </div>
-
-    <div id="lunfan">
-        <div id="list" style="left: -1000px;">
-            <img src="../imgs/4.bmp" alt="4"/>
-            <img src="../imgs/1.bmp" alt="1"/>
-            <img src="../imgs/2.bmp" alt="2"/>
-            <img src="../imgs/3.bmp" alt="3"/>
-            <img src="../imgs/4.bmp" alt="4"/>
-            <img src="../imgs/1.bmp" alt="1"/>
+            <ul class="nav navbar-nav">
+                <li><a href="##">网站首页</a></li>
+                <li class="dropdown">
+                    <a href="##" data-toggle="dropdown" class="dropdown-toggle">导师篇<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="##">CSS3</a></li>
+                        <li><a href="##">JavaScript</a></li>
+                        <li class="disabled"><a href="##">PHP</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="##">考研资讯</a></li>
+                <li><a href="##">生活篇</a></li>
+                <li><a href="##">交易篇</a></li>
+                <li><a href="##">关于我们</a></li>
+            </ul>
+            <form action="##" class="navbar-form navbar-left" rol="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入关键词"/>
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
         </div>
-        <div id="buttons">
-            <span index="1" class="on"></span>
-            <span index="2"></span>
-            <span index="3"></span>
-            <span index="4"></span>
+
+        <div id="lunfan">
+            <div id="list" style="left: 0px;">
+                <img src="../imgs/lf_fourth.bmp" alt="4"/>
+                <img src="../imgs/lf_third.bmp" alt="1"/>
+                <img src="../imgs/lf_second.bmp" alt="2"/>
+                <img src="../imgs/lf_first.bmp" alt="3"/>
+                <img src="../imgs/lf_fourth.bmp" alt="4"/>
+
+            </div>
+            <div id="buttons">
+                <span index="1" class="on"></span>
+                <span index="2"></span>
+                <span index="3"></span>
+                <span index="4"></span>
+            </div>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
         </div>
-        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
-        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+        <!--&lt;!&ndash;学习模块 三列-->
+        <div id="information">
+            <div class="information_top">
+                <span>考研资讯</span>
+                <hr class="info_hr">
+            </div>
+            <div class="learn_div">
+                <section id="ky_zl">
+                    <section class="title clear">
+                        <section class="ky_zl_content">
+                            <hr class="color_hr">
+                            <span class="cont_tip_left">研考宝典集</span>
+                            <hr class="color_hr">
+                            <ul class="cont_tip_list">
+                                <li>
+                                    <a class="topic_tip"><a href="hostry_test.html">【真题集】</a></a>
+                                    <a class="topic_link">杭电16年数据结构真题资料</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【考前试卷】</a>
+                                    <a class="topic_link">机械学院16年研考前复习题</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【公共课资料】</a>
+                                    <a class="topic_link">政治结构新题型</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【考研心得总结】</a>
+                                    <a class="topic_link">怎么考取专业课的高分</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【复试之路】</a>
+                                    <a class="topic_link">复试路途漫漫。。。</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+
+                </section>
+                <section id="ky_video">
+                    <section class="title clear">
+                        <section class="ky_video_content">
+                            <hr class="color_hr">
+                            <span class="cont_tip_left">研考相关视频</span>
+                            <span class="cont_tip_right"><a href="#">更多...</a></span>
+                            <hr class="color_hr">
+                            <div class="ky_video_lists">
+                                <div class="ky_video_list">视频 1</div>
+                                <div class="ky_video_list">视频 1</div>
+                                <div class="ky_video_list">视频 1</div>
+                                <div class="ky_video_list">视频 1</div>
+
+                            </div>
+                        </section>
+
+                    </section>
+                </section>
+                <section id="science">
+                    <section class="title clear">
+                        <section class="science_content">
+                            <hr class="color_hr">
+                            <span class="cont_tip_left">科研之路</span>
+                            <hr class="color_hr">
+                            <ul class="science_content_list">
+                                <li>
+                                    <a class="topic_tip">【计算机学院】</a>
+                                    <a class="topic_link">学院科研资料</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【机械工程学院】</a>
+                                    <a class="topic_link">学院科研资料</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【化学化工学院】</a>
+                                    <a class="topic_link">学院科研资料</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【数媒学院】</a>
+                                    <a class="topic_link">学院科研资料</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【美术学院】</a>
+                                    <a class="topic_link">学院科研资料</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【数媒学院】</a>
+                                    <a class="topic_link">学院科研资料</a>
+                                </li>
+                                <li>
+                                    <a class="topic_tip">【美术学院】</a>
+                                    <a class="topic_link">学院科研资料</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+
+                </section>
+
+            </div>
+
+        </div>
     </div>
-<!--&lt;!&ndash;学习模块 三列-->
-
-    <div class="learn_div">
-        <section id="ky_zl">
-            <section class="title clear">
-                <h2 class="hide">学习资料</h2>
-                <img alt="" src="">
-                <section class="neirong">
-                    <hr class="color act_hr">
-                    <hr class="baseline">
-                </section>
-            </section>
-
-        </section>
-
-        <section id="yjs_zl">
-            <section class="title clear">
-                <h2 class="hide">学习视频</h2>
-                <img alt="" src="">
-                <section class="neirong">
-                    <hr class="color act_hr">
-                    <hr class="baseline">
-                </section>
-            </section>
-
-        </section>
-
-
+    <div class="panel-footer">
+        <li><a href="#"> 关于我们</a></li>
+        <li><a href="#"> 联系我们</a></li>
+        <li><a href="#"> 意见反馈</a></li>
+        <li><a href="#"> 友情连接</a></li>
+        </br>
+        @2016 snm_sun@163.com 版权由杭州电子科技大学EgovLab所有
     </div>
 
 
 </div>
+
+
 <!--js代码-->
 <script src="../js/lunfan.js"></script>
-<script src="../bootstrap/js/jquery-1.12.0.js"></script>
-<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>

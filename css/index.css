@@ -1,67 +1,16 @@
-body,div,img
-p,input,form,button,pre,textarea,blockquote
-dl,dt,dd,
-ul,li,ol,
-h1,h2,h3,h4,h5,h6 {margin: 0; padding: 0;
-text-align: center;}
-/*div{*/
-    /*border:1px solid red;*/
-/*}*/
-
-#top{
-    width:1600px;
-    height:25px;
-    background-color: #ECECEC;
-    /*margin-top: -50px;*/
-}
-#top a{
-    display: inline-block;
-    font-family: inherit;
-    color: black;
-    font-size: 12px;
-    line-height: 25px;
-    float: right;
-    width:180px;
-}
-#top a li{
-    display: inline-block;
-    width: 60px;
-    text-align:center;
-}
-#content{
-    background-color:#ffffff;
-    height:600px;
-    margin:0 auto;
-    position: relative;
-}
-.navbar{
-    width: 1600px;
-    position: absolute;
-    left:0;
-    top:0;
-}
-.navbar-header {
-    width:350px;
-    height:50px;
-    position: relative;
-}
-.navbar-header img{
-    float: right;
-    margin-top: -5px;
-    width:200px;
-    height:70px;
-}
-.navbar-nav{
-    position: absolute;
-    left:500px;
-    top:0px;
-}
-.navbar-form{
-    position: absolute;
-    right:100px;
-    top:0px;
-}
-
+/*包含页眉和页脚的公共样式*/
+body,div,img,hr p,input,form,button,pre,textarea,blockquote dl,dt,dd, ul,li,ol, h1,h2,h3,h4,h5,h6 {margin: 0; padding: 0;  text-align: center;}
+/*头部设置，头部引用了bootstrap中的框架，并稍微更改*/
+#top{  width:1600px;  height:25px;  background-color: #ECECEC;/*margin-top: -50px;*/  }
+#top a{ display: inline-block; font-family: inherit; color: black; font-size: 12px; line-height: 25px; float: right; width:180px;  }
+#top a li{  display: inline-block;  width: 60px;  text-align:center;  }
+#content{ background-color:#ffffff; height:600px; margin:0 auto; position: relative;  }
+.navbar{ width: 1600px; position: absolute; left:0; top:0;  }
+.navbar-header { width:350px; height:50px; position: relative;  }
+.navbar-header img{ float: right; margin-top: -5px; width:200px; height:70px;  }
+.navbar-nav{ position: absolute; left:500px; top:0px;  }
+.navbar-form{  position: absolute;  right:100px;  top:0px;  }
+/*轮翻设置*/
 #lunfan { margin:0 auto;width: 1000px; height: 300px; /*border: 3px solid #333; */overflow: hidden; position: relative;}
 #list { width: 7000px; height: 400px; position: absolute; z-index: 1;}
 #list img { float: left;}
@@ -73,3 +22,26 @@ text-align: center;}
 #lunfan:hover .arrow { display: block;}
 #prev { left: 20px;}
 #next { right: 20px;}
+
+/*<!--考研资讯内容样式-->*/
+#information{  text-align: center;  width: 900px;  position: relative;  left: 300px;  top: 20px;  }
+.learn_div{  position: relative;  top:0px;  left:0px;  margin-bottom: -20px;  }
+.information_top span {  float: left;  font-family: 微软雅黑, 宋体, Arial;  color: darkred;  font-size: 30px;  }
+#information .information_top .info_hr {  width: 1000px;  border: 2.5px solid #E5E5E5;  z-index: 2;  background: #ecb02b;  position: relative;  left:0px;  top: 0px;  }
+#information .information_top  hr {  display: block;  -webkit-margin-before: 0.5em;  -webkit-margin-after: 0.5em;  -webkit-margin-start: auto;  -webkit-margin-end: auto;  border-width: 1px;  }
+.color_hr{  border: 1px dashed #C1DBF7 ;  margin-top: 35px;  }
+#ky_zl{  width:400px;  height:300px;  position: absolute;  left:0;  top:0;  }
+.cont_tip_left{  font-family: Algerian ;  font-size: 18px;  font-weight: 600;  color: #403E58;  position: absolute;  left: 0;  top:45px;  }
+.cont_tip_right{  float: right;  color: #B9B4B4;  position: absolute;  right: 30px;  top:50px;  }
+
+.ky_zl_content .cont_tip_list{  display: block;  list-style-type: disc;  -webkit-margin-before: 1em;  -webkit-margin-after: 1em;  -webkit-margin-start: 0px;  -webkit-margin-end: 0px;  -webkit-padding-start: 40px;  position: relative;  left:-30px;  }
+.ky_zl_content .cont_tip_list li{  list-style: disc inside;  width: 90%;  height: 30px;  line-height: 22px;  overflow: hidden;  text-align:left;  }
+#ky_video{  width:400px;  height:300px;  position: absolute;  right:0;  top:0; }
+
+.ky_video_content .ky_video_lists .ky_video_list{  position: relative;  left:-10px;  top:0;  width:170px;  height:100px;  background-color: #00AA00;  margin:10px 3px 4px 0px;  display: inline-block;  }
+#science{/*background-color: #FAFAFA;*/ position: absolute; top: 350px; width:800px; height:300px;  }
+.science_content .science_content_list li{  position: relative;  left: 0px;  list-style: disc inside;  width: 90%;  line-height: 22px;  overflow: hidden;  text-align:left;  }
+
+/*页脚设置*/
+.panel-footer{  width:1600px;  height: 100px;  color: grey;  position: absolute;  top:1200px;  clear:both;  }
+.panel-footer li{ margin-top: 30px; display: inline-block;  }
